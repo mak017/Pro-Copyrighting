@@ -49,7 +49,6 @@ table {
 }
 body {
     width: 100%;
-    max-width: 1600px;
     margin: auto;
     color: black;
     font-size: 13px;
@@ -75,6 +74,10 @@ h3 {
 }
 img {
     max-width: 100%;
+}
+.content {
+    max-width: 1600px;
+    margin: auto;
 }
 .btn {
     padding: 15px;
@@ -130,10 +133,11 @@ header {
     width: 100%;
     padding: 15px 4%;
     text-align: center;
-    background: #D9D0E1;
+    background-color: #D9D0E1;
+    background-clip: padding-box;
     border-bottom: 9px solid transparent;
-    border-image: url('../images/section-border-purple.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image: url('../images/section-border-purple1.png') 0 0 50 repeat;
+    border-image-width: 0 0 24px;
 }
 header * {
     margin: 0 auto;
@@ -182,7 +186,7 @@ header .calend span {
     position: absolute;
     left: 0;
     top: 0;
-    background: url('../images/special-aside-bg.png') #BCAEC9;
+    background: url('../images/special-aside-bg.png');
     background-size: 100% 100%;
     padding: 20px 20px 30px 30px;
     font-size: 1.3rem;
@@ -214,9 +218,6 @@ header .btn {
 }
 @media (min-width: 768px) {
     header {
-        background: url('../images/header-bg.jpg') #D9D0E1;
-        background-size: 100% 100%;
-        background-clip: padding-box;
         padding: 40px 10%;
     }
     .course-title {
@@ -240,6 +241,7 @@ header .btn {
         font-size: 2.5rem;
     }
     .special-aside {
+        left: -7%;
         display: initial;
     }
     .slogan {
@@ -253,9 +255,22 @@ header .btn {
         height: 41px;
     }
 }
+@media (min-width: 992px) {
+    header {
+        background: url('../images/header-left-bg.png') 0 0 no-repeat,
+                    url('../images/header-right-bg.png') 99% 17px no-repeat;
+        background-color: #D9D0E1;
+        background-clip: padding-box;
+    }
+}
 @media (min-width: 1400px) {
     .special-aside {
         left: 14%;
+    }
+}
+@media (min-width: 1600px) {
+    header {
+        border-image-width: 0 0 39px;
     }
 }
 
@@ -266,7 +281,7 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-pink1.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
 }
 .intro::before {
     content: '';
@@ -298,6 +313,11 @@ header .btn {
         padding: 10% 10px;
     }
 }
+@media (min-width: 1600px) {
+    .intro {
+        border-image-width: 0 0 39px;
+    }
+}
 
 .targets {
     position: relative;
@@ -306,7 +326,7 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-pink2.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
 }
 .targets::before {
     content: '';
@@ -321,9 +341,6 @@ header .btn {
 }
 .target-wrapper {
     padding: 0;
-}
-.targets img {
-    text-align: center;
 }
 .targets h2 {
     margin-bottom: 25px;
@@ -350,6 +367,8 @@ header .btn {
 .targets img {
     display: block;
     margin: 0 auto;
+    max-width: 92%;
+    text-align: center;
 }
 .targets li {
     position: relative;
@@ -357,20 +376,46 @@ header .btn {
     font-size: 1rem;
     list-style: none;
 }
-.businessman li::before {
+.targets li::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 7px;
+    left: -3px;
     width: 17px;
-    height: 30px;
-    background: url(../images/list-bullet-circle-pink.png) -1px 13px no-repeat;
+    height: 17px;
+}
+.businessman li::before {
+    background: url(../images/list-bullet-circle-pink.png) no-repeat;
 }
 .businessman li:nth-of-type(2)::before {
+    transform: rotate(-25deg)
+}
+.businessman li:nth-of-type(4)::before {
+    transform: rotate(25deg)
+}
+.businessman li:nth-of-type(5)::before {
+    transform: rotate(60deg)
+}
+.businessman li:nth-of-type(6)::before {
+    transform: rotate(-60deg)
+}
+.businessman li:nth-of-type(7)::before {
+    transform: rotate(-40deg)
+}
+.freelancer li::before {
+    background: url(../images/list-bullet-circle-purple.png) no-repeat;
+}
+.freelancer li:nth-of-type(2)::before {
     transform: rotate(-50deg)
 }
-.freelancer li {
-    background: url(../images/list-bullet-circle-purple.png) -1px 14px no-repeat;
+.freelancer li:nth-of-type(4)::before {
+    transform: rotate(-120deg)
+}
+.freelancer li:nth-of-type(5)::before {
+    transform: rotate(-40deg)
+}
+.freelancer li:nth-of-type(6)::before {
+    transform: rotate(-95deg)
 }
 @media (min-width: 768px) {
     .target-wrapper {
@@ -393,7 +438,7 @@ header .btn {
     }
     .targets .businessman {
         background: transparent;
-        padding-right: 15px;
+        padding-right: 26px;
         margin-bottom: 0;
     }
     .targets .freelancer {
@@ -408,11 +453,31 @@ header .btn {
         padding: 10px 20px 20px 30px;
         font-size: 1.375rem;
     }
+    .targets li::before {
+        top: 13px;
+    }
 }
 @media (min-width: 1400px) {
     .targets h2 {
         margin-bottom: 60px;
         padding: 0 15%;
+    }
+    .targets .businessman {
+        padding-right: 35px;
+    }
+    .targets .freelancer {
+        padding-left: 35px;  
+    }
+    .targets h3 {
+        padding: 50px 25px 30px 25px;
+    }
+    .targets li {
+        padding: 10px 20px 20px 30px;
+    }
+}
+@media (min-width: 1600px) {
+    .targets {
+        border-image-width: 0 0 39px;
     }
 }
 
@@ -424,7 +489,7 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-purple2.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
 }
 .motivation h2 {
     padding: 0 3% 25px 3%;
@@ -456,8 +521,7 @@ header .btn {
     padding-left: 45px;
     list-style: none;
 }
-.motivation .part1 li::before,
-.motivation .part2 li::before {
+.motivation li::before {
     content: '';
     position: absolute;
     top: 7px;
@@ -472,6 +536,12 @@ header .btn {
 .motivation .part2 li::before {
     background: url(../images/list-bullet-star-pink.png) no-repeat;
     background-size: 100% 100%;
+}
+.motivation li:nth-of-type(2)::before {
+    transform: rotate(-45deg)
+}
+.motivation li:nth-of-type(3)::before {
+    transform: rotate(-35deg)
 }
 .motivation .part2 {
     padding-bottom: 50px;
@@ -519,7 +589,7 @@ header .btn {
 .motivation .cat {
     display: none;
     position: absolute;
-    bottom: 0px;
+    bottom: 8px;
     right: calc(14% + 60px);
     width: 16.5%;
     max-width: 231px;
@@ -563,12 +633,12 @@ header .btn {
         padding-left: 55px;
         list-style: none;
     }
-    .motivation .part1 li::before,
-    .motivation .part2 li::before {
+    .motivation li::before {
         top: 13px;
         left: -4px;
         width: 50px;
         height: 44px;
+        background-size: 85% !important;
     }
     .motivation .part3 p {
         margin-bottom: 90px;
@@ -587,6 +657,23 @@ header .btn {
     .motivation .cat {
         display: block;
     }
+    .motivation li::before {
+        background-size: 100% 100% !important;
+    }
+}
+@media (min-width: 1400px) {
+    .motivation .cat {
+        height: 183px;
+        bottom: 0.5vh;
+    }
+}
+@media (min-width: 1600px) {
+    .motivation {
+        border-image-width: 0 0 39px;
+    }
+    .motivation .cat {
+        bottom: 14px;
+    }
 }
 
 
@@ -598,7 +685,7 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-purple3.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
 }
 .program h2 {
     margin-bottom: 20px;
@@ -619,7 +706,7 @@ header .btn {
     background: url('../images/cloud.png') no-repeat #fff;
     background-size: 100% 100%;
     margin: 10px 0;
-    padding: 10px 20px 45px 15px;
+    padding: 10px 20px 45px 20px;
     font-size: 1.2rem;
 }
 .big-num {
@@ -662,24 +749,31 @@ header .btn {
     color: #fff;
     width: 90%;
     margin: 25px auto;
-    padding: 10px 15px 20px 15px;
+    padding: 10px 25px 20px 25px;
     font-size: 1rem;
     text-align: center;
 }
-
+.program img {
+    position: relative;
+}
 @media (min-width: 768px) {
+    .program {
+        padding: 60px 3%;
+    }
     .program h2 {
         margin-bottom: 40px;
     }
     .program .cloud {
-        margin: 5px 40px;
-        padding: 10px 75px 60px 40px;
+        margin: 5px;
+        padding: 10px 82px 60px 40px;
     }
     .cloud h4 {
+        width: 80%;
         font-size: 1.4rem;
     }
     .program .note {
         width: 50%;
+        font-size: 1.2rem;
     }
     .cloud-wrap:nth-child(2) .cloud::before {
         content: '';
@@ -730,16 +824,31 @@ header .btn {
     }
 }
 @media (min-width: 992px) {
+    .program {
+        padding: 60px 7% 5px 7%;
+    }
     .program .note {
         width: 49%;
         margin: 60px auto;
         padding: 25px 30px;
         font-size: 1.125rem;
     }
+    .cloud h4 {
+        width: 100%;
+        font-size: 1.4rem;
+    }
 }
 @media (min-width: 1400px) {
     .program h2 {
         padding: 0 15%;
+    }
+    .program .cloud {
+        margin: 5px 40px;
+    }
+}
+@media (min-width: 1600px) {
+    .program {
+        border-image-width: 0 0 39px;
     }
 }
 
@@ -757,7 +866,10 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-pink2.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
+}
+.prices .content {
+    max-width: 1400px;
 }
 .prices h2 {
     position: relative;
@@ -773,18 +885,21 @@ header .btn {
     text-align: center;
 }
 .offer {
+    float: none;
+    margin: auto;
+    max-width: 415px;
     padding: 0;
     text-align: left;
 }
 .pack {
-    padding: 162px 50px 30px 35px;
     position: relative;
-    margin-top: -125px;
+    padding: 45% 50px 30px 35px;
+    margin-top: -70px;
 }
 .pack h3 {
-    width: 59%;
+    width: 57%;
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     padding: 5px 10px;
     color: #FACD8A;
     font-size: 1.1rem;
@@ -802,7 +917,7 @@ header .btn {
 }
 .pack .or {
     font-style: italic;
-    text-align: center;
+    text-indent: 30%;
 }
 .pack .opaque {
     color: #D3C6D4;
@@ -812,7 +927,7 @@ header .btn {
     background-size: 100% 100%;
 }
 .standart .pack h3 {
-    background: url(../images/pack-head-purple.png) no-repeat #8045B6;
+    background: url(../images/pack-head-purple.png) no-repeat;
     background-size: 100% 100%;
 }
 .standart ul > li::before {
@@ -832,7 +947,7 @@ header .btn {
     background-size: 100% 100%;
 }
 .pro .pack h3 {
-    background: url(../images/pack-head-pink.png) no-repeat #E95B8F;
+    background: url(../images/pack-head-pink.png) no-repeat;
     background-size: 100% 100%;
 }
 .pro ul > li::before {
@@ -941,6 +1056,13 @@ header .btn {
     background-size: 100% 100%;
 }
 @media (min-width: 768px) {
+    .offer {
+        float: none;
+        margin: auto;
+        max-width: 614px;
+        padding: 0;
+        text-align: left;
+    }
     .prices {
         height: auto;
         padding: 20px 9%;
@@ -956,7 +1078,6 @@ header .btn {
     }
     .prices h2 {
         font-size: 3.75rem;
-        width: 60%;
         margin-bottom: -61px;
     }
     .pack {
@@ -985,14 +1106,6 @@ header .btn {
     .pro .top::before {
         left: 41.5%;
     }
-    .standart .btn {
-        background: url('../images/btn-purple2.png') no-repeat;
-        background-size: 100% 100%;
-    }
-    .pro .btn {
-        background: url('../images/btn-pink.png') no-repeat;
-        background-size: 100% 100%;
-    }
     .top .price span:nth-of-type(1) {
         font-size: 1.875rem;
     }
@@ -1010,18 +1123,50 @@ header .btn {
     }
 }
 @media (min-width: 992px) {
+    .offer {
+        float: left;
+    }
     .prices {
         height: 1100px;
+    }
+    .pack h3 {
+        margin: 10px 0 30px 26%;
+        font-size: 1.35rem;
+        padding: 10px 15px;
+    }
+    .price-wrapper .btn {
+        padding: 20px 15px 25px 15px;
+        font-size: 1.9rem;
+    }
+    .standart .btn {
+        background: url('../images/btn-purple2.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .pro .btn {
+        background: url('../images/btn-pink.png') no-repeat;
+        background-size: 100% 100%;
     }
 }
 @media (min-width: 1200px) {
     .prices {
         height: 930px;
     }
+    .price-wrapper .btn {
+        font-size: 2.44rem;
+    }
 }
 @media (min-width: 1400px) {
     .prices {
-        height: 900px;
+        height: 850px;
+    }
+    .pack h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1600px) {
+    .prices {
+        border-image-width: 0 0 39px;
     }
 }
 
@@ -1033,7 +1178,7 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-pink3.png') 0 0 50 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
 }
 .else h2 {
     position: relative;
@@ -1058,6 +1203,7 @@ header .btn {
     background-size: 100% 100%;
 }
 .page {
+    float: left;
     position: relative;
     margin-bottom: 5px;
     height: auto;
@@ -1107,6 +1253,7 @@ header .btn {
     height: 74px;
     background: url(../images/calendar2.png) no-repeat;
     background-size: contain;
+    z-index: 2;
 }
 .page1 .col2 .head::before {
     bottom: -9px;
@@ -1152,7 +1299,7 @@ header .btn {
 }
 .page img {
     position: absolute;
-    bottom: -52vmin;
+    bottom: -50vw;
     right: 10px;
     z-index: 5;
     max-width: 176%;
@@ -1180,33 +1327,26 @@ header .btn {
     .else {
         padding-top: 50px;
         height: auto;
-        background: url('../images/clouds-balloon.png') 0 80% no-repeat;
+        background: url('../images/clouds-balloon.png') -12% 80% no-repeat;
     }
     .notepad {
         width: 80%;
+        height: 660px;
         margin: 40px auto;
         font-size: 1.375rem;
+    }
+    .page {
+        height: 330px;
     }
     .page .head {
         height: 62px;
         padding: 1.5%;
     }
+    .page2 .head {
+        padding-top: 25px;
+    }
     .page .content {
         height: calc(100% - 62px);
-    }
-    .page1::before {
-        top: -183px;
-        left: -70px;
-        width: 234px;
-        height: 181px;
-        background: url(../images/butterfly1.png) no-repeat;
-    }
-    .page1::after {
-        top: -175px;
-        right: -294px;
-        width: 406px;
-        height: 481px;
-        background: url(../images/butterfly2.png) no-repeat;
     }
     .page2::before {
         top: 17%;
@@ -1226,17 +1366,18 @@ header .btn {
     .page1 .col1 .head::before {
         width: 62px;
         background-size: 100%;
-        z-index: 5
     }
     .page1 .col2 .head::before {
         right: 12%;
         height: 67px;
         background-size: 100%;
+        z-index: 2;
     }
     .page2 .col1 .head::before {
         bottom: -11px;
         left: 8%;
         background-size: 100%;
+        z-index: 2;
     }
     .page2 .col2 .head::before {
         bottom: -32px;
@@ -1254,25 +1395,44 @@ header .btn {
         padding: 30px 50px;
     }
     .page img {
-        top: 185px;
+        top: 225px;
     }
 }
 @media (min-width: 992px) {
     .else {
-        padding-top: 400px;
+        padding-top: 360px;
         height: 900px;
     }
     .notepad {
         width: 70%;
+        height: 603px;
     }
     .page {
         height: 300px;
     }
+    .page1::before {
+        top: -183px;
+        left: -70px;
+        width: 234px;
+        height: 181px;
+        background: url(../images/butterfly1.png) no-repeat;
+    }
+    .page1::after {
+        top: -175px;
+        right: -294px;
+        width: 406px;
+        height: 481px;
+        background: url(../images/butterfly2.png) no-repeat;
+    }
+    .page img {
+        top: 185px;
+    }
 }
 @media (min-width: 1200px) {
     .else {
-        padding-top: 370px;
+        padding-top: 390px;
         height: 885px;
+        background-position: 0 80%;
     }
     .notepad {
         width: 60%;
@@ -1286,8 +1446,15 @@ header .btn {
 }
 @media (min-width: 1400px) {
     .else {
-        padding-top: 250px;
-        height: 750px;
+        padding-top: 380px;
+        height: 880px;
+    }
+}
+@media (min-width: 1600px) {
+    .else {
+        height: 895px;
+        padding-top: 330px;
+        border-image-width: 0 0 39px;
     }
 }
 
@@ -1298,7 +1465,7 @@ header .btn {
     background-clip: padding-box;
     border-bottom: 9px solid transparent;
     border-image: url('../images/section-border-pink4.png') 0 0 22 repeat;
-    border-image-width: 0 0 20px;
+    border-image-width: 0 0 24px;
 }
 .instructors h2 {
     position: relative;
@@ -1310,18 +1477,11 @@ header .btn {
     position: relative;
     text-align: center;
 }
-.instructor::before,
 .instructor::after,
+.instructor .img-wrap::before,
 .instructor li::before {
     content: '';
     position: absolute;
-}
-.instructor::before {
-    top: -35px;
-    left: 31%;
-    width: 114px;
-    height: 51px;
-    background: url(../images/diadem.png) no-repeat;
 }
 .instructor::after {
     top: -23px;
@@ -1338,6 +1498,18 @@ header .btn {
 .instructor img,
 .instructor h3 {
     margin-bottom: 15px;
+}
+.instructor .img-wrap {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+}
+.instructor .img-wrap::before {
+    top: -35px;
+    left: 24%;
+    width: 114px;
+    height: 51px;
+    background: url(../images/diadem.png) no-repeat;
 }
 .instructor img {
     position: relative;
@@ -1370,8 +1542,16 @@ header .btn {
     background: url(../images/list-bullet-circle-white.png) no-repeat;
     background-size: 75%;
 }
+.instructor1 li:first-of-type::before {
+    background: url(../images/list-bullet-circle-white-first.png) no-repeat;
+    background-size: 75%;
+}
 .instructor2 li::before {
     background: url(../images/list-bullet-circle-violet.png) no-repeat;
+    background-size: 75%;
+}
+.instructor2 li:first-of-type::before {
+    background: url(../images/list-bullet-circle-violet-first.png) no-repeat;
     background-size: 75%;
 }
 .instructors .note {
@@ -1398,20 +1578,12 @@ header .btn {
         padding-left: inherit;
         padding-right: 30px;
     }
-    .instructor1::after {
-        left: 21%;
-        background: url(../images/3stars-pink.png) no-repeat;
-    }
     .instructor2 {
         padding-left: 30px;
         padding-right: inherit;
     }
     .instructor2::before {
         left: 42%;
-    }
-    .instructor2::after {
-        right: 21%;
-        background: url(../images/3stars-purple.png) no-repeat;
     }
     .instructor img,
     .instructor h3 {
@@ -1423,13 +1595,8 @@ header .btn {
     .instructor li {
         margin-bottom: 20px;
     }
-    .instructor li::before {
+    .about .instructor li::before {
         left: -42px;
-    }
-    .instructor1 li::before {
-        background-size: 100%;
-    }
-    .instructor2 li::before {
         background-size: 100%;
     }
     .instructors .note {
@@ -1440,6 +1607,20 @@ header .btn {
 @media (min-width: 992px) {
     .instructors {
         padding-top: 250px;
+        padding-bottom: 5%;
+    }
+    .instructor1::after {
+        left: 21%;
+        background: url(../images/3stars-pink.png) no-repeat;
+    }
+    .instructor2::after {
+        right: 21%;
+        background: url(../images/3stars-purple.png) no-repeat;
+    }
+}
+@media (min-width: 1600px) {
+    .instructors {
+        border-image-width: 0 0 40px;
     }
 }
 
@@ -1447,10 +1628,11 @@ header .btn {
     float: left;
     position: relative;
     padding: 20px 0;
-    background: url(../images/reviews-left-bg.png) 3% 40px no-repeat,
-                url(../images/reviews-right-bg.png) 96% 50px no-repeat,
-                url(../images/reviews-bottom-bg.png) 47% 96% no-repeat;
     background-color: #D9D0E1;
+    background-clip: padding-box;
+    border-bottom: 9px solid transparent;
+    border-image: url('../images/section-border-purple3.png') 0 0 22 repeat;
+    border-image-width: 0 0 24px;
 }
 .reviews::before,
 .gallery-wrap::before,
@@ -1459,13 +1641,6 @@ header .btn {
 .html5gallery::after {
     content: '';
     position: absolute;
-}
-.reviews::before {
-    top: -9px;
-    left: 47%;
-    width: 104px;
-    height: 38px;
-    background: url(../images/3flags.png) no-repeat;
 }
 .reviews h2 {
     position: relative;
@@ -1480,97 +1655,151 @@ header .btn {
     border: 5px solid #fff;
     border-radius: 70px;
 }
-.gallery-wrap::before {
-    top: 60px;
-    left: -102px;
-    width: 57px;
-    height: 56px;
-    background: url(../images/pen-letter.png) no-repeat;
-}
-.gallery-wrap::after {
-    top: -52px;
-    right: -28px;
-    width: 90px;
-    height: 42px;
-    background: url(../images/2flowers.png) no-repeat;
-}
 .gallery-wrap * {
     border-radius: 60px;
 }
 .html5gallery {
     position: relative;
 }
-.html5gallery::before {
-    bottom: -39px;
-    left: -54px;
-    width: 52px;
-    height: 85px;
-    background: url(../images/2flags-clear-before.png) no-repeat;
-}
-.html5gallery::after {
-    bottom: -35px;
-    right: -57px;
-    width: 56px;
-    height: 92px;
-    background: url(../images/2flags-clear-after.png) no-repeat;
-}
 a[href="http://html5box.com/html5gallery/watermark.php"] div {
     display: none !important;
 }
-.reviews > img:first-of-type {
-    position: absolute;
-    top: -10px;
-    left: 14%;
-    width: 68px;
-    height: 173px;
-}
-.reviews > img:last-of-type {
-    position: absolute;
-    top: -10px;
-    right: 12%;
-    width: 41px;
-    height: 105px;
+.reviews > img {
+    display: none;
 }
 @media (min-width: 768px) {
     .reviews {
         padding: 60px 7%;
+        background: url(../images/reviews-left-bg.png) 3% 40px no-repeat,
+                    url(../images/reviews-right-bg.png) 96% 50px no-repeat,
+                    url(../images/reviews-bottom-bg.png) 47% 96% no-repeat;
+        background-color: #D9D0E1;
+    }
+    .reviews::before {
+        top: -9px;
+        left: 47%;
+        width: 104px;
+        height: 38px;
+        background: url(../images/3flags.png) no-repeat;
     }
     .gallery-wrap {
-        width: 60%;
+        width: 80%;
         margin: 50px auto;
+    }
+    .reviews > img:first-of-type {
+        display: initial;
+        position: absolute;
+        top: -10px;
+        left: 14%;
+        width: 68px;
+        height: 173px;
+    }
+    .reviews > img:last-of-type {
+        display: initial;
+        position: absolute;
+        top: -10px;
+        right: 12%;
+        width: 41px;
+        height: 105px;
+    }
+}
+@media (min-width: 992px) {
+    .gallery-wrap {
+        width: 60%;
+    }
+    .gallery-wrap::before {
+        top: 60px;
+        left: -102px;
+        width: 57px;
+        height: 56px;
+        background: url(../images/pen-letter.png) no-repeat;
+    }
+    .gallery-wrap::after {
+        top: -52px;
+        right: -28px;
+        width: 90px;
+        height: 42px;
+        background: url(../images/2flowers.png) no-repeat;
+    }
+    .html5gallery::before {
+        bottom: -39px;
+        left: -54px;
+        width: 52px;
+        height: 85px;
+        background: url(../images/2flags-clear-before.png) no-repeat;
+    }
+    .html5gallery::after {
+        bottom: -35px;
+        right: -57px;
+        width: 56px;
+        height: 92px;
+        background: url(../images/2flags-clear-after.png) no-repeat;
+    }
+}
+@media (min-width: 1600px) {
+    .reviews {
+        border-image-width: 0 0 39px;
     }
 }
 
 .warranty {
     float: left;
-    background: #E0A7C3;
     text-align: center;
     padding: 25px 5%;
+    background: url(../images/warranty-left-bg.png) 3% 10px no-repeat,
+                url(../images/warranty-right-bg.png) 98% 50px no-repeat;
+    background-color: #E0A7C3;
+    background-clip: padding-box;
+    border-bottom: 9px solid transparent;
+    border-image: url('../images/section-border-pink2.png') 0 0 22 repeat;
+    border-image-width: 0 0 24px;
 }
 .warranty div {
-    background: #F5E6ED;
+    position: relative;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 10px 5px 10px 10px;
+    padding: 40px 10px 30px 15px;
+    background: url('../images/warranty-frame.png') no-repeat;
+    background-size: 100% 100%;
 }
 .warranty h2 {
+    padding-bottom: 40px;
     text-transform: uppercase;
     color: #9776B0;
     font-family: 'Yanone Kaffeesatz', Arial, Helvetica, sans-serif;
     font-size: 1.7rem;
 }
+.warranty p {
+    padding-bottom: 20px;
+}
 .warranty img {
     padding: 5px;
 }
+.warranty img:last-of-type {
+    width: 40%;
+    max-width: 250px;
+}
 .warranty h4 {
+    padding-top: 20px;
     font-size: 1.2rem;
     font-weight: 700;
 }
 @media (min-width: 768px) {
     .warranty {
-        padding: 60px 17.85%;
+        padding: 60px 17.85% 14vmin 17.85%;
     }
     .warranty div {
-        padding: 30px 5px 10px 20px;
+        padding: 70px 30px 35px 25px;
+    }
+    .warranty div::after {
+        content: '';
+        position: absolute;
+        bottom: -200px;
+        right: -90px;
+        width: 29vmin;
+        height: 505px;
+        background: url(../images/ice-cream-cat.png) no-repeat;
+        background-size: contain;
     }
     .warranty h2 {
         font-size: 2.8rem;
@@ -1578,8 +1807,27 @@ a[href="http://html5box.com/html5gallery/watermark.php"] div {
     .warranty img {
         padding: 10px;
     }
+    .warranty img:last-of-type {
+        width: auto;
+    }
+    .warranty p:last-of-type {
+        padding-right: 40px;
+    }
     .warranty h4 {
         font-size: 1.5625rem;
+    }
+}
+@media (min-width: 992px) {
+    .warranty {
+        padding: 60px 17.85% 19vmin 17.85%;
+    }
+}
+@media (min-width: 1600px) {
+    .warranty {
+        border-image-width: 0 0 39px;
+    }
+    .warranty div::after {
+        width: 269px;
     }
 }
 
@@ -1587,17 +1835,27 @@ footer {
     clear: both;
     text-align: center;
 }
-footer a {
+footer .ref-wrap {
     display: block;
-    color: #000;
-    padding: 5px;
+    padding: 10px;
 }
-footer a:hover {
+footer a {
+    color: #000;
+    border-bottom: 9px solid transparent;
+    border-image: url('../images/dotted-underline.png') 0 0 10;
+    border-image-width: 0 0 10px;
+}
+footer a:hover,
+footer a:active,
+footer a:focus {
     text-decoration: none;
 }
+footer a:hover {
+    border-image: none;
+}
 @media (min-width: 768px) {
-    footer a {
+    footer .ref-wrap {
         display: inline;
-        padding: 20px;
+        margin: 20px;
     }
 }
