@@ -43,9 +43,7 @@ table {
          url('fonts/cicle_shadow-webfont.woff') format('woff');
 }
 * {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
     width: 100%;
@@ -194,7 +192,8 @@ header .calend span {
 .special-aside span {
     display: block;
     width: 200px;
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
 }
 .slogan {
     position: relative;
@@ -242,7 +241,7 @@ header .btn {
     }
     .special-aside {
         left: -7%;
-        display: initial;
+        display: block;
     }
     .slogan {
         font-size: 1.75rem;
@@ -388,37 +387,56 @@ header .btn {
     background: url(../images/list-bullet-circle-pink.png) no-repeat;
 }
 .businessman li:nth-of-type(2)::before {
-    transform: rotate(-25deg)
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg)
 }
 .businessman li:nth-of-type(4)::before {
-    transform: rotate(25deg)
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg)
 }
 .businessman li:nth-of-type(5)::before {
-    transform: rotate(60deg)
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg)
 }
 .businessman li:nth-of-type(6)::before {
-    transform: rotate(-60deg)
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg)
 }
 .businessman li:nth-of-type(7)::before {
-    transform: rotate(-40deg)
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg)
 }
 .freelancer li::before {
     background: url(../images/list-bullet-circle-purple.png) no-repeat;
 }
 .freelancer li:nth-of-type(2)::before {
-    transform: rotate(-50deg)
+    -webkit-transform: rotate(-50deg);
+            transform: rotate(-50deg)
 }
 .freelancer li:nth-of-type(4)::before {
-    transform: rotate(-120deg)
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg)
 }
 .freelancer li:nth-of-type(5)::before {
-    transform: rotate(-40deg)
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg)
 }
 .freelancer li:nth-of-type(6)::before {
-    transform: rotate(-95deg)
+    -webkit-transform: rotate(-95deg);
+            transform: rotate(-95deg)
 }
 @media (min-width: 768px) {
     .target-wrapper {
+        background-image: url(../images/2-col.jpg),
+        -webkit-linear-gradient(
+        left,
+        #E3D6DD,
+        #E3D6DD 48%,
+        transparent 48%,
+        transparent 52%,
+        #D9D0E1 52%,
+        #D9D0E1
+        );
         background-image: url(../images/2-col.jpg),
         linear-gradient(
         to right,
@@ -538,10 +556,12 @@ header .btn {
     background-size: 100% 100%;
 }
 .motivation li:nth-of-type(2)::before {
-    transform: rotate(-45deg)
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
 }
 .motivation li:nth-of-type(3)::before {
-    transform: rotate(-35deg)
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg)
 }
 .motivation .part2 {
     padding-bottom: 50px;
@@ -993,12 +1013,14 @@ header .btn {
 .standart .top,
 .standart .bottom {
     background: #D9D0E1;
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
 }
 .pro .top,
 .pro .bottom {
     background: #E8C5D6;
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
 }
 .standart .top::before,
 .pro .top::before {
@@ -1293,7 +1315,8 @@ header .btn {
 }
 .page .plus {
     text-align: center;
-    transform: skew(-20deg, 0);
+    -webkit-transform: skew(-20deg, 0);
+            transform: skew(-20deg, 0);
     font-size: 1.9rem;
     line-height: 0.8;
 }
