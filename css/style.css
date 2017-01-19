@@ -1863,22 +1863,24 @@ footer .ref-wrap {
     display: block;
     padding: 10px;
 }
-footer a {
+.ref-wrap a {
     color: #000;
     border-bottom: 9px solid transparent;
     border-image: url('../images/dotted-underline.png') 0 0 10;
     border-image-width: 0 0 10px;
 }
-footer a:hover,
-footer a:active,
-footer a:focus {
+.ref-wrap a:hover,
+.ref-wrap a:active,
+.ref-wrap a:focus {
     text-decoration: none;
 }
-footer a:hover {
+.ref-wrap a:hover {
     border-image: none;
 }
 footer .copyright {
     margin-top: 40px;
+}
+footer .copyright a {
     color: #A1A5A7;
     font-size: 0.8rem;
 }
