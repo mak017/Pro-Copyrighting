@@ -1856,6 +1856,7 @@ a[href="http://html5box.com/html5gallery/watermark.php"] div {
 
 footer {
     clear: both;
+    padding-bottom: 10px;
     text-align: center;
 }
 footer .ref-wrap {
@@ -1875,6 +1876,11 @@ footer a:focus {
 }
 footer a:hover {
     border-image: none;
+}
+footer .copyright {
+    margin-top: 40px;
+    color: #A1A5A7;
+    font-size: 0.8rem;
 }
 @media (min-width: 768px) {
     footer .ref-wrap {
